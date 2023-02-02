@@ -5,7 +5,9 @@ import java.io.FileFilter;
 import java.io.FilenameFilter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class demo4 {
     public static void main(String[] args) {
@@ -16,18 +18,25 @@ public class demo4 {
 
         List<String> pathList = new ArrayList<>();
         List<String> list = Arrays.asList(paths);
+        List<String> allFileList = new ArrayList<>();
         list.forEach(e -> {
-            List<String> list1 = returnAllDirectory(e, pathList, getDirectory());
-            list1.forEach(directory ->{
-                System.out.println(directory);
+            returnAllDirectory(e, pathList, getDirectory());
+            allFileList.addAll(pathList);
+            pathList.forEach(directory ->{
+//                System.out.println(directory);
                 List<String> list2 = returnAssignFile(directory, getAssignSuffixFile(".java"));
-                list2.forEach(System.out::println);
+                allFileList.addAll(list2);
+//                list2.forEach(System.out::println);
             });
+            allFileList.forEach(System.out::println);
+            List<String> allFileList2 = allFileList.stream().sorted().collect(Collectors.toList());
+            System.out.println("=====================================");
+            allFileList2.forEach(System.out::println);
         });
 
     }
 
-    static List<String> returnAllDirectory(String path, List<String> pathList, FileFilter filter) {
+    static void returnAllDirectory(String path, List<String> pathList, FileFilter filter) {
         File file = new File(path);
         File[] files = file.listFiles(filter);
         if (files.length != 0) {
@@ -36,7 +45,6 @@ public class demo4 {
                 returnAllDirectory(file1.getPath(), pathList, filter);
             }
         }
-        return pathList;
     }
 
     static List<String> returnAssignFile(String path, FilenameFilter filter) {

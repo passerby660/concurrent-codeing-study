@@ -13,7 +13,7 @@ public class demo3 {
         ints[2] = 9;
         ints[3] = 4;
         ints[4] = 8;
-        Arrays.sort(ints);
+//        Arrays.sort(ints, Comparator::comparingInt);
         for (int anInt : ints) {
             System.out.println(anInt);
         }
