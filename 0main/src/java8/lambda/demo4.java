@@ -1,11 +1,8 @@
-package java8;
+package java8.lambda;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
 
-public class demo3 {
+
+public class demo4 {
     public static void main(String[] args) {
         int[] ints = new int[5];
         ints[0] = 7;
@@ -18,4 +15,5 @@ public class demo3 {
             System.out.println(anInt);
         }
     }
+
 }

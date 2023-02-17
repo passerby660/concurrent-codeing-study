@@ -1,6 +1,11 @@
-package java8;
+package java8.lambda;
 
-public class demo5 {
+/**
+ * @author elliott
+ * @date 2023/2/15
+ * @Desc
+ **/
+public class demo6 {
     public static void main(String[] args) {
         new Thread(uncheck(() -> {
             System.out.println("zzz");
@@ -21,5 +26,4 @@ public class demo5 {
     @FunctionalInterface interface RunnableEx{
         void run() throws Exception;
     }
-
 }

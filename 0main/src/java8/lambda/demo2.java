@@ -1,11 +1,8 @@
-package java8;
+package java8.lambda;
 
 import java.util.concurrent.Callable;
 
-/**
- * 捕获lambda表达式的异常
- */
-public class demo1 {
+public class demo2 {
     public static void main(String[] args) {
         Runnable sleeper = () -> {
             System.out.println("zzz");
@@ -23,4 +20,5 @@ public class demo1 {
         };
 
     }
+
 }

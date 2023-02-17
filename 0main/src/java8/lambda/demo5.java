@@ -1,15 +1,14 @@
-package java8;
+package java8.lambda;
 
 import java.io.File;
 import java.io.FileFilter;
 import java.io.FilenameFilter;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class demo4 {
+public class demo5 {
     public static void main(String[] args) {
 
         String[] paths = {"C:\\MyWorkSpace\\baseProject"};
